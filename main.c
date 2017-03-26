@@ -24,10 +24,10 @@ void *countdownThread(void *arg)
 	while (i-- != 0) {
 		sleep(1);
 		if (i % 60 == 0) {
-			if ((i % 60) >= 0 && (i % 60) <= 9)
+			if ((i / 60) >= 0 && (i / 60) <= 9)
 				sprintf(buff, "0%d", i/60);
 			else
-				sprintf(buff, "0%d", i/60);
+				sprintf(buff, "%d", i/60);
 			set_field_buffer(args -> arg2[curr], 0, buff);
 		}
 		refresh();
