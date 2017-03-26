@@ -123,6 +123,13 @@ int main(void)
 				form_driver(main_form, REQ_RIGHT_CHAR);
 				break;
 			case 'q':
+				/* 
+				 * Deselect and reselect field, 
+				 * updating the field's content
+				 */
+				form_driver(main_form, REQ_NEXT_FIELD);
+				form_driver(main_form, REQ_PREV_FIELD);
+				form_driver(main_form, REQ_END_LINE);
 				/* Get currently selected field's content */
 				i  = atoi(field_buffer(field[curr], 0));
 				/* Convert to seconds */
